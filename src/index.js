@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDom from 'react-dom';
-import App from './components/js/App';
+import React from "react";
+import ReactDOM from "react-dom";
+import CardFlip from "./components/card/card";
 
-ReactDom.render(<App />, document.getElementById('app'));
+ReactDOM.render(<CardFlip />, document.getElementById("app"));
