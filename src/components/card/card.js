@@ -1,6 +1,5 @@
-
 import React from "react";
-import ReactCardFlip from "react-flipcard-2";
+import ReactCardFlip from "react-card-flip";
 import "./card.scss";
 import imagenReact from "../../imagenes/react.svg";
 
@@ -9,7 +8,7 @@ class CardFlip extends React.Component {
     return (
       <div className="card" onClick={this.props.seleccionarCarta}>
       <ReactCardFlip
-        flipped = {this.props.estaSiendoComparada || this.props.fueAdivinada}
+        isFlipped = {this.props.estaSiendoComparada || this.props.fueAdivinada}
         disabled={true}
       >
         <div className="portada">

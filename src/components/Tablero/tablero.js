@@ -7,6 +7,7 @@ export default class Tablero extends Component {
             <div className="tablero col">
                 { 
                     this.props.baraja
+                    
                     .map((carta, index) => {
                     const estaSiendoComparada = this.props.parejaSeleccionada.indexOf(carta) > -1;
                     return <CardFlip
