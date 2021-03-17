@@ -1,36 +1,25 @@
-import ReactCardFlip from "react-card-flip";
+
 import React from "react";
-import HideCard from "./card1";
-import ShowCard from "./card2";
+import ReactCardFlip from "react-flipcard-2";
 import "./card.scss";
+import imagenReact from "../../imagenes/react.svg";
 
 class CardFlip extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      isFlipped: false,
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(e) {
-    e.preventDefault();
-    this.setState((prevState) => ({ isFlipped: !prevState.isFlipped }));
-  }
-
   render() {
     return (
-      <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
-        <HideCard
-          name="This is the front of the card."
-          handleClick={this.handleClick}
-        ></HideCard>
-        <ShowCard name="REACT FLIP CARD." 
-          handleClick={this.handleClick}>
-        </ShowCard>
+      <ReactCardFlip>
+        <div className="portada">
+        <img src = {imagenReact}/>
+        </div>
+        <div className="contenido">
+            <i className={`fa ${this.props.icono} fa-5x`}></i>
+          </div>
       </ReactCardFlip>
-    );
+
+  )
   }
-}
+} 
+
+
 
 export default CardFlip;
