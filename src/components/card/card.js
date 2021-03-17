@@ -7,7 +7,11 @@ import imagenReact from "../../imagenes/react.svg";
 class CardFlip extends React.Component {
   render() {
     return (
-      <ReactCardFlip>
+      <div className="card" onClick={this.props.seleccionarCarta}>
+      <ReactCardFlip
+        flipped = {this.props.estaSiendoComparada || this.props.fueAdivinada}
+        disabled={true}
+      >
         <div className="portada">
         <img src = {imagenReact}/>
         </div>
@@ -15,6 +19,7 @@ class CardFlip extends React.Component {
             <i className={`fa ${this.props.icono} fa-5x`}></i>
           </div>
       </ReactCardFlip>
+      </div>
 
   )
   }
