@@ -6,7 +6,7 @@ import imagenReact from "../../imagenes/react.svg";
 class CardFlip extends React.Component {
   render() {
     return (
-      <div className="card" onClick={this.props.seleccionarCarta}>
+      <div className="carta" onClick={this.props.seleccionarCarta}>
       <ReactCardFlip
         isFlipped = {this.props.estaSiendoComparada || this.props.fueAdivinada}
         disabled={true}

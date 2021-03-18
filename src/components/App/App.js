@@ -10,7 +10,8 @@ const getEstadoInicial = () =>{
     return {
         baraja,
         parejaSeleccionada: [],
-        estaComparando: false
+        estaComparando: false,
+        numeroDeIntentos: 0
     };
 }
 export default class App extends Component {
@@ -21,7 +22,10 @@ export default class App extends Component {
     render (){
         return (
             <div className="App">
-                <Header></Header>
+                <Header
+                    numeroDeIntentos = {this.state.numeroDeIntentos}
+                    resetearPartida = {() => this.resetearPartida()}
+                ></Header>
                 <Tablero
                 baraja={this.state.baraja}
                 parejaSeleccionada = {this.state.parejaSeleccionada}
@@ -63,8 +67,24 @@ export default class App extends Component {
             parejaSeleccionada: [],
             baraja,
             estaComparando: false,
+            numeroDeIntentos: this.state.numeroDeIntentos + 1 
         })
         }, 1000)
+    }
+
+    verificarSiHayGanador(baraja) {
+        if(
+            baraja.filter((carta) => !carta.fueAdivinada).length ===0
+        )
+        {
+            alert(`Has ganado en ${this.state.numeroDeIntentos} intentos`);
+        }
+    }
+
+    resetearPartida (){
+        this.setState(
+            getEstadoInicial()
+        );
     }
 
 };

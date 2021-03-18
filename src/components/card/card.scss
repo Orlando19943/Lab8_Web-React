@@ -1,14 +1,16 @@
 @import "bootstrap";
 
+
 .carta {
   width: 125px;
   height: 125px;
+  filter: drop-shadow(2px 4px 8px #585858);
 }
 
 .portada {
   width: 125px;
   height: 125px;
-  background-color: #ffb300;
+  background-color:darkgray;
 }
 
 .contenido {
@@ -17,7 +19,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(3, 220, 244);
+  background-color: darkgray;
 }
 
 .ReactFlipCard {

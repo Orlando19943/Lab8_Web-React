@@ -14,10 +14,10 @@ export default class Header extends Component {
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02"> 
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link active animationShake" aria-current="page" >Reiniciar</a>
+                        <a class="nav-link active animationShake reinicio" aria-current="page" onClick = {this.props.resetearPartida}>Reiniciar</a>
                     </li>            
                     <li class="nav-item">
-                        <a class="nav-link active animationShake" id = "intentos" aria-current="page">Intentos: </a>
+                        <a class="nav-link active animationShake" id = "intentos" aria-current="page">Intentos: {this.props.numeroDeIntentos}</a>
                     </li>  
                     </ul>            
                 </div>
