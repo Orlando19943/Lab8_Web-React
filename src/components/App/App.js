@@ -62,7 +62,7 @@ export default class App extends Component {
             return {...carta, fueAdivinada: true};
             });
         }
-    
+        this.verificarSiHayGanador(baraja);
         this.setState({
             parejaSeleccionada: [],
             baraja,
@@ -74,7 +74,7 @@ export default class App extends Component {
 
     verificarSiHayGanador(baraja) {
         if(
-            baraja.filter((carta) => !carta.fueAdivinada).length ===0
+            baraja.filter((carta) => !carta.fueAdivinada).length === 0
         )
         {
             alert(`Has ganado en ${this.state.numeroDeIntentos} intentos`);
