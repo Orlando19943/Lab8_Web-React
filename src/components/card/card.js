@@ -3,27 +3,20 @@ import ReactCardFlip from "react-card-flip";
 import "./card.scss";
 import imagenReact from "../../imagenes/react.svg";
 
-class CardFlip extends React.Component {
+export default class CardFlip extends React.Component {
   render() {
+    const item = this.props;
     return (
-      <div className="carta" onClick={this.props.seleccionarCarta}>
-      <ReactCardFlip
-        isFlipped = {this.props.estaSiendoComparada || this.props.fueAdivinada}
-        disabled={true}
-      >
-        <div className="portada">
-        <img src = {imagenReact}/>
-        </div>
-        <div className="contenido">
-            <i className={`fa ${this.props.icono} fa-5x`}></i>
+      <div role="button" className="carta" onClick={item.seleccionarCarta} onKeyPress={this.handleKeyUp} tabIndex="-1">
+        <ReactCardFlip isFlipped={item.estaSiendoComparada || item.fueAdivinada} disabled={0}>
+          <div className="portada">
+            <img src={imagenReact} alt="memoria" />
           </div>
-      </ReactCardFlip>
+          <div className="contenido">
+            <i className={`fa ${item.icono} fa-5x`} />
+          </div>
+        </ReactCardFlip>
       </div>
-
-  )
+    );
   }
-} 
-
-
-
-export default CardFlip;
+}

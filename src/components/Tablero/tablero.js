@@ -1,7 +1,8 @@
-import React, { Component }from "react";
+import React from "react";
 import CardFlip from "../card/card";
-import './tablero.scss';
-export default class Tablero extends Component {
+import "./tablero.scss";
+
+export default class Tablero extends React.Component {
     render() {
         return (
             <div className="tablero col">
