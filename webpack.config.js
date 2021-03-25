@@ -11,9 +11,8 @@ module.exports = {
     rules: [
       { test: /\.css$/i, use: ["style-loader", "css-loader"]},
       { test: /\.s[ac]ss$/i, use: ["style-loader", "css-loader", "sass-loader"]},
-      { test: /\.(png|jpe?g|gif)$/i, loader: 'file-loader', options: {name: '[path][name].[ext]' }, },
-      { test: /\.js$/, loader: "babel-loader", exclude: /(node_modules)/, },
-      {test: /\.(svg|eot|woff|woff2|ttf)$/,use: ['file-loader']}
+      { test: /\.(png|jpe?g|gif|svg|eot|woff|woff2|ttf)$/i, loader: 'file-loader', options: {name: '[path][name].[ext]' }, },
+      { test: /\.js$/, loader: "babel-loader", exclude: /(node_modules)/, }
     ]
   },
   plugins: [
