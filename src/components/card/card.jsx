@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ReactCardFlip from "react-card-flip";
 import "./card.scss";
 import imagenReact from "../../imagenes/react.svg";
@@ -20,3 +21,10 @@ export default class CardFlip extends React.Component {
     );
   }
 }
+
+CardFlip.propTypes = {
+  seleccionarCarta: PropTypes.func.isRequired,
+  estaSiendoComparada: PropTypes.bool.isRequired,
+  fueAdivinada: PropTypes.bool.isRequired,
+  icono: PropTypes.string.isRequired,
+};

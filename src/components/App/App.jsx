@@ -1,5 +1,5 @@
-/* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable no-alert */
+// descativo esta restriccion ya que yo utilizo la alerta para indicar de que el juego termino
 import React, { Component } from "react";
 import Header from "../header/header";
 import Tablero from "../Tablero/tablero";
@@ -14,6 +14,19 @@ const getEstadoInicial = () => {
     numeroDeIntentos: 0,
   };
 };
+
+Header.defaultProps = {
+  numeroDeIntentos: 0,
+  isFlipped: false,
+  resetearPartida() {},
+  onclick() {},
+};
+
+Tablero.defaultProps = {
+  baraja: [],
+  parejaSeleccionada: [],
+};
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -37,8 +50,8 @@ export default class App extends Component {
 
   compararPareja(parejaSeleccionada) {
     this.setState({ estaComparando: true });
+    const item = this.state;
     setTimeout(() => {
-      const item = this.state;
       const [primeraCarta, segundaCarta] = parejaSeleccionada;
       let { baraja } = item;
       if (primeraCarta.icono === segundaCarta.icono) {
@@ -60,11 +73,11 @@ export default class App extends Component {
   }
 
   verificarSiHayGanador(baraja) {
+    const { state } = this;
     if (
       baraja.filter((carta) => !carta.fueAdivinada).length === 0
     ) {
-      // eslint-disable-next-line react/destructuring-assignment
-      alert(`Has ganado en ${this.state.numeroDeIntentos} intentos`);
+      alert(`Has ganado en ${state.numeroDeIntentos} intentos`);
     }
   }
 
